@@ -21,6 +21,7 @@ def getBirthdays(numberOfBirthdays):
         birthdays.append(birthday)
     return birthdays
 
+
 def getMatch(birthdays):
     """Returns the date object of a birthday that occurs more than once
     in the birthdays list."""
@@ -32,3 +33,31 @@ def getMatch(birthdays):
         for b, birthdayB in enumerate(birthdays[a + 1 :]):
             if birthdayA == birthdayB:
                 return birthdayA #Return the matching birthday.
+            
+
+# Display the intro:
+print('''Birthday Paradox, by Al Sweigart al@inventwithpython.com
+
+The birthday paradox shows us that in a group of N people, the odds
+that two of them have matching birthdays is surprixingly large.
+This program does a Monte Carlo simulation (that is, repeated random 
+simulations) to explore this concept.
+
+(It's not actually a paradox, it's just a surprising result.)
+''')
+
+# Set upa tuple of month names in order:
+MONTHS = ('JAN', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+
+while True: # Keep asking until the user enters a valid amount.
+    print('How many birthdays shall I generate? (Max 100)')
+    response = input('> ')
+    if response.isdecimal() and (0 < int(response) <= 100):
+        numBDays = int(response)
+        break # User has entered a valid amount
+print()
+
+
+
+
